@@ -56,8 +56,8 @@ if __name__ == '__main__':
     assert get_response.status_code == 404
     assert get_response.json() == {'detail': 'No data found for the given user and date range'}
 
-    # Make a GET request with invalid arguments
-    print('Sending GET request to the server with invalid arguments')
+    # Make a GET request with invalid argument types
+    print('Sending GET request to the server with invalid argument types')
     print()
     get_params = {'user_id': 'invalid', 'start_date': 'invalid', 'end_date': 'invalid'}
     get_response = r.get(get_url, params = get_params)
@@ -74,8 +74,8 @@ if __name__ == '__main__':
     assert get_response.status_code == 422
     assert get_response.json() == {'detail': [{'type': 'missing', 'loc': ['query', 'end_date'], 'msg': 'Field required', 'input': None}]}
 
-    # Make a POST request with invalid arguments
-    print('Sending POST request to the server with invalid arguments')
+    # Make a POST request with invalid argument types
+    print('Sending POST request to the server with invalid argument types')
     print()
     post_request_data = {'user_id': 'invalid', 'timestamp': '2025-01-01T09:45:00Z', 'heart_rate': 82, 'steps': 300, 'calories': 13}
     post_response = r.post(post_url, json = post_request_data)

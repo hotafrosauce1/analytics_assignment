@@ -22,9 +22,9 @@ def ingest_health_data(data):
         db.commit()
     except IntegrityError as e:
         db.rollback()
-        logger.warning(f'Duplicate entry error: {e}')
+        logger.warning(f'Primary key constraint violation: {e}', exc_info = True)
     except Exception as e:
         db.rollback()
-        logger.error(f'Unexpected database error: {e}', exc_info=True)
+        logger.error(f'Database error: {e}', exc_info = True)
     finally:
         db.close()
