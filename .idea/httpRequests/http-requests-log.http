@@ -1,0 +1,19 @@
+POST http://127.0.0.1:8000/ingest
+Content-Type: application/json
+Content-Length: 114
+User-Agent: IntelliJ HTTP Client/PyCharm 2024.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "user_id": 101,
+  "timestamp": "2025-01-01T09:30:00Z",
+  "heart_rate": 78,
+  "steps": 150,
+  "calories": 6.5
+}
+
+<> 2025-03-12T122221.200.json
+
+###
+
